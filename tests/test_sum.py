@@ -1,34 +1,34 @@
-import {{crate_name}}
+import {{crate_name}}Func
 import pytest
 
 
 def test_sum_as_string():
     """Test the sum_as_string function"""
-    assert {{crate_name}}.sum_as_string(2, 2) == '4'
-    assert {{crate_name}}.sum_as_string(10, 20) == '30'
+    assert {{crate_name}}Func.sum_as_string(2, 2) == '4'
+    assert {{crate_name}}Func.sum_as_string(10, 20) == '30'
 
 
 def test_divide():
     """Test the divide function"""
-    assert {{crate_name}}.divide(10.0, 2.0) == 5.0
-    assert {{crate_name}}.divide(15.0, 3.0) == 5.0
+    assert {{crate_name}}Func.divide(10.0, 2.0) == 5.0
+    assert {{crate_name}}Func.divide(15.0, 3.0) == 5.0
     
     # Test error handling
     with pytest.raises(ValueError, match="Division by zero"):
-        {{crate_name}}.divide(10.0, 0.0)
+        {{crate_name}}Func.divide(10.0, 0.0)
 
 
 def test_process_list():
     """Test the process_list function"""
-    assert {{crate_name}}.process_list([]) == 0
-    assert {{crate_name}}.process_list(["a", "b", "c"]) == 3
-    assert {{crate_name}}.process_list(["hello", "world"]) == 2
+    assert {{crate_name}}Func.process_list([]) == 0
+    assert {{crate_name}}Func.process_list(["a", "b", "c"]) == 3
+    assert {{crate_name}}Func.process_list(["hello", "world"]) == 2
 
 
 def test_class():
     """Test the {{crate_name}}St class"""
     # Test creation
-    obj = {{crate_name}}.{{crate_name}}St(42)
+    obj = {{crate_name}}Func.{{crate_name}}St(42)
     assert obj.get_value() == 42
     
     # Test set_value

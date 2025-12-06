@@ -13,9 +13,9 @@ categories = ["python-bindings"]
 
 [lib]
 # The name of the native library. This is the name which will be used in Python to import the
-# library (i.e. `import {{crate_name}}`). If you change this, you must also change the name of the
+# library (i.e. `import {{crate_name}}Func`). If you change this, you must also change the name of the
 # `#[pymodule]` in `src/lib.rs`.
-name = "{{crate_name}}"
+name = "{{crate_name}}Func"
 # "cdylib" is necessary to produce a shared library for Python to import from.
 #
 # Downstream Rust code (including code in `bin/`, `examples/`, and `tests/`) will not be able
