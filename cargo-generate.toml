@@ -1,0 +1,18 @@
+[template]
+exclude = [".venv", "target", ".github/workflows/build-release.yaml"]
+
+[template.variables]
+project_name = { type = "string", prompt = "Project name (e.g., my_rust_python)" }
+project_description = { type = "string", prompt = "Project description", default = "A Python extension module written in Rust using PyO3" }
+author_name = { type = "string", prompt = "Author name", default = "Your Name" }
+author_email = { type = "string", prompt = "Author email", default = "your.email@example.com" }
+license = { type = "string", prompt = "License (MIT/Apache-2.0/BSD-3-Clause)", default = "MIT" }
+python_min_version = { type = "string", prompt = "Minimum Python version", default = "3.8" }
+
+[template.substitutions]
+# Crate name (snake_case for Rust)
+crate_name = { from = "project_name", to = "{{project_name|snake_case}}" }
+# Module name (same as crate name for Python)
+module_name = { from = "project_name", to = "{{project_name|snake_case}}" }
+# Class name (PascalCase)
+class_name = { from = "project_name", to = "{{project_name|pascal_case}}" }
