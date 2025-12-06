@@ -26,9 +26,9 @@ def test_process_list():
 
 
 def test_class():
-    """Test the {{project_name|pascal_case}} class"""
+    """Test the {{crate_name}}St class"""
     # Test creation
-    obj = {{crate_name}}.{{project_name|pascal_case}}(42)
+    obj = {{crate_name}}.{{crate_name}}St(42)
     assert obj.get_value() == 42
     
     # Test set_value
@@ -41,7 +41,7 @@ def test_class():
     assert obj.get_value() == 110
     
     # Test string representations
-    assert "{{project_name|pascal_case}}" in repr(obj)
+    assert "{{crate_name}}St" in repr(obj)
     assert "value" in str(obj)
 
 

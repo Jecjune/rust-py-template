@@ -24,16 +24,16 @@ fn process_list(items: Vec<String>) -> PyResult<usize> {
 
 /// Example Python class implemented in Rust
 #[pyclass]
-struct {{crate_name|pascal_case}} {
+struct {{crate_name}}St {
     value: i32,
 }
 
 #[pymethods]
-impl {{crate_name|pascal_case}} {
+impl {{crate_name}}St {
     /// Create a new instance
     #[new]
     fn new(value: i32) -> Self {
-        {{crate_name|pascal_case}} { value }
+        {{crate_name}}St { value }
     }
 
     /// Get the current value
@@ -54,12 +54,12 @@ impl {{crate_name|pascal_case}} {
 
     /// String representation
     fn __repr__(&self) -> String {
-        format!("{{crate_name|pascal_case}}(value={})", self.value)
+        format!("{{crate_name}}St(value={})", self.value)
     }
 
     /// String representation for str()
     fn __str__(&self) -> String {
-        format!("{{crate_name|pascal_case}} with value: {}", self.value)
+        format!("{{crate_name}}St with value: {}", self.value)
     }
 }
 
@@ -67,14 +67,14 @@ impl {{crate_name|pascal_case}} {
 /// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
 /// import the module.
 #[pymodule]
-fn {{crate_name}}(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn {{crate_name}}Func(m: &Bound<'_, PyModule>) -> PyResult<()> {
     // Add functions
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(divide, m)?)?;
     m.add_function(wrap_pyfunction!(process_list, m)?)?;
     
     // Add classes
-    m.add_class::<{{crate_name|pascal_case}}>()?;
+    m.add_class::<{{crate_name}}St>()?;
     
     // Add module-level constants or variables
     m.add("__version__", "0.1.0")?;

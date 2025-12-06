@@ -7,4 +7,3 @@ exclude = ["README.md"]
 author_name = { type = "string", prompt = "Author name", default = "Your Name" }
 author_email = { type = "string", prompt = "Author email", default = "your.email@example.com" }
 python_min_version = { type = "string", prompt = "The minimum Python version to support", regex = "^[0-9]+(\\.[0-9]+)?$" }
-license = { type = "string", prompt = "License (MIT/Apache-2.0/BSD-3-Clause)", default = "Apache-2.0"}
