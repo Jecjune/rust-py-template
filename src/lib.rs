@@ -24,16 +24,16 @@ fn process_list(items: Vec<String>) -> PyResult<usize> {
 
 /// Example Python class implemented in Rust
 #[pyclass]
-struct {{class_name}} {
+struct {{project_name|pascal_case}} {
     value: i32,
 }
 
 #[pymethods]
-impl {{class_name}} {
+impl {{project_name|pascal_case}} {
     /// Create a new instance
     #[new]
     fn new(value: i32) -> Self {
-        {{class_name}} { value }
+        {{project_name|pascal_case}} { value }
     }
 
     /// Get the current value
@@ -54,12 +54,12 @@ impl {{class_name}} {
 
     /// String representation
     fn __repr__(&self) -> String {
-        format!("{{class_name}}(value={})", self.value)
+        format!("{{project_name|pascal_case}}(value={})", self.value)
     }
 
     /// String representation for str()
     fn __str__(&self) -> String {
-        format!("{{class_name}} with value: {}", self.value)
+        format!("{{project_name|pascal_case}} with value: {}", self.value)
     }
 }
 
@@ -67,14 +67,14 @@ impl {{class_name}} {
 /// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
 /// import the module.
 #[pymodule]
-fn {{module_name}}(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn {{project_name|snake_case}}(m: &Bound<'_, PyModule>) -> PyResult<()> {
     // Add functions
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(divide, m)?)?;
     m.add_function(wrap_pyfunction!(process_list, m)?)?;
     
     // Add classes
-    m.add_class::<{{class_name}}>()?;
+    m.add_class::<{{project_name|pascal_case}}>()?;
     
     // Add module-level constants or variables
     m.add("__version__", "0.1.0")?;

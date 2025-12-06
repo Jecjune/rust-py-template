@@ -1,34 +1,34 @@
-import {{module_name}}
+import {{project_name|snake_case}}
 import pytest
 
 
 def test_sum_as_string():
     """Test the sum_as_string function"""
-    assert {{module_name}}.sum_as_string(2, 2) == '4'
-    assert {{module_name}}.sum_as_string(10, 20) == '30'
+    assert {{project_name|snake_case}}.sum_as_string(2, 2) == '4'
+    assert {{project_name|snake_case}}.sum_as_string(10, 20) == '30'
 
 
 def test_divide():
     """Test the divide function"""
-    assert {{module_name}}.divide(10.0, 2.0) == 5.0
-    assert {{module_name}}.divide(15.0, 3.0) == 5.0
+    assert {{project_name|snake_case}}.divide(10.0, 2.0) == 5.0
+    assert {{project_name|snake_case}}.divide(15.0, 3.0) == 5.0
     
     # Test error handling
     with pytest.raises(ValueError, match="Division by zero"):
-        {{module_name}}.divide(10.0, 0.0)
+        {{project_name|snake_case}}.divide(10.0, 0.0)
 
 
 def test_process_list():
     """Test the process_list function"""
-    assert {{module_name}}.process_list([]) == 0
-    assert {{module_name}}.process_list(["a", "b", "c"]) == 3
-    assert {{module_name}}.process_list(["hello", "world"]) == 2
+    assert {{project_name|snake_case}}.process_list([]) == 0
+    assert {{project_name|snake_case}}.process_list(["a", "b", "c"]) == 3
+    assert {{project_name|snake_case}}.process_list(["hello", "world"]) == 2
 
 
 def test_class():
-    """Test the {{class_name}} class"""
+    """Test the {{project_name|pascal_case}} class"""
     # Test creation
-    obj = {{module_name}}.{{class_name}}(42)
+    obj = {{project_name|snake_case}}.{{project_name|pascal_case}}(42)
     assert obj.get_value() == 42
     
     # Test set_value
@@ -41,7 +41,7 @@ def test_class():
     assert obj.get_value() == 110
     
     # Test string representations
-    assert "{{class_name}}" in repr(obj)
+    assert "{{project_name|pascal_case}}" in repr(obj)
     assert "value" in str(obj)
 
 

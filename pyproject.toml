@@ -27,5 +27,5 @@ classifiers = [
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
 ]
-project-urls = { Homepage = "https://github.com/{{author_name}}/{{project_name}}", Documentation = "https://docs.rs/{{crate_name}}" }
+project-urls = { Homepage = "https://github.com/{{author_name}}/{{project_name}}", Documentation = "https://docs.rs/{{project_name|snake_case}}" }
 
