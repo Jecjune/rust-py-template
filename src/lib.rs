@@ -67,7 +67,7 @@ impl {{project_name|pascal_case}} {
 /// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
 /// import the module.
 #[pymodule]
-fn {{project_name|snake_case}}(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn {{crate_name}}(m: &Bound<'_, PyModule>) -> PyResult<()> {
     // Add functions
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(divide, m)?)?;

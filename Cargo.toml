@@ -1,25 +1,25 @@
 [package]
-name = "{{project_name|snake_case}}"
+name = "{{crate_name}}"
 version = "0.1.0"
 edition = "2021"
 authors = ["{{author_name}} <{{author_email}}>"]
 description = "A Python extension module written in Rust using PyO3"
 license = "{{license}}"
-repository = "https://github.com/{{author_name}}/{{project_name}}"
-homepage = "https://github.com/{{author_name}}/{{project_name}}"
-documentation = "https://docs.rs/{{project_name|snake_case}}"
+repository = "https://github.com/{{author_name}}/{{crate_name}}"
+homepage = "https://github.com/{{author_name}}/{{crate_name}}"
+documentation = "https://docs.rs/{{crate_name}}"
 keywords = ["python", "rust", "pyo3", "extension-module"]
 categories = ["python-bindings"]
 
 [lib]
 # The name of the native library. This is the name which will be used in Python to import the
-# library (i.e. `import {{project_name|snake_case}}`). If you change this, you must also change the name of the
+# library (i.e. `import {{crate_name}}`). If you change this, you must also change the name of the
 # `#[pymodule]` in `src/lib.rs`.
-name = "{{project_name|snake_case}}"
+name = "{{crate_name}}"
 # "cdylib" is necessary to produce a shared library for Python to import from.
 #
 # Downstream Rust code (including code in `bin/`, `examples/`, and `tests/`) will not be able
-# to `use {{project_name|snake_case}};` unless the "rlib" or "lib" crate type is also included, e.g.:
+# to `use {{crate_name}};` unless the "rlib" or "lib" crate type is also included, e.g.:
 # crate-type = ["cdylib", "rlib"]
 crate-type = ["cdylib"]
 

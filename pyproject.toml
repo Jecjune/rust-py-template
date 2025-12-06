@@ -3,7 +3,7 @@ requires = ["maturin>=1.0,<2.0", "setuptools"]
 build-backend = 'maturin'
 
 [project]
-name = "{{project_name}}"
+name = "{{crate_name}}"
 license = { file = "LICENSE" }
 version = "0.1.0"
 authors = [
@@ -27,5 +27,5 @@ classifiers = [
     'Intended Audience :: Developers',
     'License :: OSI Approved :: {{license}}',
 ]
-project-urls = { Homepage = "https://github.com/{{author_name}}/{{project_name}}", Documentation = "https://docs.rs/{{project_name|snake_case}}" }
+project-urls = { Homepage = "https://github.com/{{author_name}}/{{crate_name}}" }
 
