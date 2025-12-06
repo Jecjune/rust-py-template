@@ -24,16 +24,16 @@ fn process_list(items: Vec<String>) -> PyResult<usize> {
 
 /// Example Python class implemented in Rust
 #[pyclass]
-struct {{project_name|pascal_case}} {
+struct {{crate_name|pascal_case}} {
     value: i32,
 }
 
 #[pymethods]
-impl {{project_name|pascal_case}} {
+impl {{crate_name|pascal_case}} {
     /// Create a new instance
     #[new]
     fn new(value: i32) -> Self {
-        {{project_name|pascal_case}} { value }
+        {{crate_name|pascal_case}} { value }
     }
 
     /// Get the current value
@@ -54,12 +54,12 @@ impl {{project_name|pascal_case}} {
 
     /// String representation
     fn __repr__(&self) -> String {
-        format!("{{project_name|pascal_case}}(value={})", self.value)
+        format!("{{crate_name|pascal_case}}(value={})", self.value)
     }
 
     /// String representation for str()
     fn __str__(&self) -> String {
-        format!("{{project_name|pascal_case}} with value: {}", self.value)
+        format!("{{crate_name|pascal_case}} with value: {}", self.value)
     }
 }
 
@@ -74,7 +74,7 @@ fn {{crate_name}}(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(process_list, m)?)?;
     
     // Add classes
-    m.add_class::<{{project_name|pascal_case}}>()?;
+    m.add_class::<{{crate_name|pascal_case}}>()?;
     
     // Add module-level constants or variables
     m.add("__version__", "0.1.0")?;
