@@ -1,5 +1,4 @@
 import {{crate_name}}Func
-import pytest
 
 
 def test_sum_as_string():
@@ -14,8 +13,11 @@ def test_divide():
     assert {{crate_name}}Func.divide(15.0, 3.0) == 5.0
     
     # Test error handling
-    with pytest.raises(ValueError, match="Division by zero"):
+    try:
         {{crate_name}}Func.divide(10.0, 0.0)
+        assert False, "Expected ValueError for division by zero"
+    except ValueError as e:
+        assert "Division by zero" in str(e)
 
 
 def test_process_list():
