@@ -4,7 +4,7 @@ build-backend = 'maturin'
 
 [project]
 name = "{{crate_name}}"
-license = { file = "LICENSE" }
+# license = "{{license}}"
 version = "0.1.0"
 authors = [
     {name = "{{author_name}}", email = "{{author_email}}"}
@@ -25,7 +25,7 @@ classifiers = [
     'Programming Language :: Python :: 3.12',
     'Programming Language :: Rust',
     'Intended Audience :: Developers',
-    'License :: OSI Approved :: {{license}}',
+    # 'License :: OSI Approved :: {{license}}',
 ]
 project-urls = { Homepage = "https://github.com/{{author_name}}/{{crate_name}}" }
 
