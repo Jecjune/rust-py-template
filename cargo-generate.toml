@@ -1,10 +1,10 @@
 [template]
-exclude = [".venv", "target", ".github/workflows/build-release.yaml"]
+exclude = ["README.md"]
 
-[template.variables]
+[placeholders]
+# The tutorial for this field is: https://docs.rs/crate/cargo-generate/0.12.0
 project_name = { type = "string", prompt = "Project name (e.g., my_rust_python)"}
-project_description = { type = "string", prompt = "Project description", default = "A Python extension module written in Rust using PyO3" }
 author_name = { type = "string", prompt = "Author name", default = "Your Name" }
 author_email = { type = "string", prompt = "Author email", default = "your.email@example.com" }
-python_min_version = { type = "string", prompt = "Minimum Python version (e.g., 3.9)", default = "3.9"}
+python_min_version = { type = "string", prompt = "The minimum Python version to support", regex = "^[0-9]+$" }
 license = { type = "string", prompt = "License (MIT/Apache-2.0/BSD-3-Clause)", default = "Apache-2.0"}

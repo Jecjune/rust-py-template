@@ -9,7 +9,7 @@ version = "0.1.0"
 authors = [
     {name = "{{author_name}}", email = "{{author_email}}"}
 ]
-description = "{{project_description}}"
+description = "A Python extension module written in Rust using PyO3"
 readme = "README.md"
 requires-python = ">={{python_min_version}}"
 keywords = ["python", "rust", "pyo3", "extension-module"]
@@ -25,7 +25,7 @@ classifiers = [
     'Programming Language :: Python :: 3.12',
     'Programming Language :: Rust',
     'Intended Audience :: Developers',
-    'License :: OSI Approved :: MIT License',
+    'License :: OSI Approved :: {{license}}',
 ]
 project-urls = { Homepage = "https://github.com/{{author_name}}/{{project_name}}", Documentation = "https://docs.rs/{{project_name|snake_case}}" }
 
